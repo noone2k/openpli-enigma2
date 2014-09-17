@@ -1543,22 +1543,22 @@ void eServiceMP3::gstBusCall(GstMessage *msg)
 #if GST_VERSION_MAJOR < 1
 					audioSink = GST_ELEMENT_CAST(gst_iterator_find_custom(children, (GCompareFunc)match_sinktype, (gpointer)"GstDVBAudioSink"));
 #else
-					if (gst_iterator_find_custom(children, (GCompareFunc)match_sinktype, &element, (gpointer)"GstDVBAudioSink"))
+					/*if (gst_iterator_find_custom(children, (GCompareFunc)match_sinktype, &element, (gpointer)"GstDVBAudioSink"))
 					{
 						audioSink = g_value_dup_object(&element);
 						g_value_unset(&element);
-					}
+					}*/
 #endif
 					gst_iterator_free(children);
 					children = gst_bin_iterate_recurse(GST_BIN(m_gst_playbin));
 #if GST_VERSION_MAJOR < 1
 					videoSink = GST_ELEMENT_CAST(gst_iterator_find_custom(children, (GCompareFunc)match_sinktype, (gpointer)"GstDVBVideoSink"));
 #else
-					if (gst_iterator_find_custom(children, (GCompareFunc)match_sinktype, &element, (gpointer)"GstDVBVideoSink"))
+					/*if (gst_iterator_find_custom(children, (GCompareFunc)match_sinktype, &element, (gpointer)"GstDVBVideoSink"))
 					{
 						videoSink = g_value_dup_object(&element);
 						g_value_unset(&element);
-					}
+					}*/
 #endif
 					gst_iterator_free(children);
 
