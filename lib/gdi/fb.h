@@ -19,7 +19,7 @@ class fbClass
 	int m_number_of_pages;
 	int m_phys_mem;
 #ifdef SWIG
-	fbClass(const char *fb="/dev/fb0");
+	fbClass(const char *fb="/dev/fb1");
 	~fbClass();
 public:
 #else
@@ -42,7 +42,7 @@ public:
 	unsigned int Stride() { return stride; }
 	fb_cmap *CMAP() { return &cmap; }
 
-	fbClass(const char *fb="/dev/fb0");
+	fbClass(const char *fb="/dev/fb1");
 	~fbClass();
 
 			// low level gfx stuff
